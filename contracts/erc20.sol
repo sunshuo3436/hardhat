@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+contract MyToken {
+    event Transfer(address indexed from, address indexed to, uint256 value);
 
-contract MyToken is ERC20 {
-    constructor(uint256 initialSupply) ERC20("MyToken", "MTK") {
-        _mint(msg.sender, initialSupply);
+    function transfer(address to, uint256 value) public returns (bool) {
+        emit Transfer(msg.sender, to, value);
+        return true;
     }
 }

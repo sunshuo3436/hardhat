@@ -6,101 +6,72 @@ import (
 	"log"
 	"math/big"
 	"strings"
+	"time"
 
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
-
-	"github.com/sunshuo3436/solidity_go/contracts"
 )
 
-// LogTransfer ..
-type LogTransfer struct {
-	From   common.Address
-	To     common.Address
-	Tokens *big.Int
-}
-
-// LogApproval ..
-type LogApproval struct {
-	TokenOwner common.Address
-	Spender    common.Address
-	Tokens     *big.Int
-}
+const (
+	infuraURL    = "https://holesky.infura.io/v3/c0fd902e8c32475f85909278c7352314"
+	contractAddr = "0xEcF4c423a74C7cbc722F7201D0BD3625f8E12a7b"
+	contractABI  = `[{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"}]`
+)
 
 func main() {
-	client, err := ethclient.Dial("https://holesky.infura.io/v3/c0fd902e8c32475f85909278c7352314")
+	client, err := ethclient.Dial(infuraURL)
 	if err != nil {
 		log.Fatalf("Failed to connect to the Ethereum client: %v", err)
 	}
 
-	contractAddress := common.HexToAddress("0x5774a5e7e7dce357DaC3d7d2dE35E5137136D48b")
+	contractAddress := common.HexToAddress(contractAddr)
 	query := ethereum.FilterQuery{
-		FromBlock: big.NewInt(1584475),
-		ToBlock:   big.NewInt(1584539),
-		Addresses: []common.Address{
-			contractAddress,
-		},
+		FromBlock: big.NewInt(1584992),
+		ToBlock:   big.NewInt(1585043),
+		Addresses: []common.Address{contractAddress},
 	}
 
-	logs, err := client.FilterLogs(context.Background(), query)
+	parsedABI, err := abi.JSON(strings.NewReader(contractABI))
 	if err != nil {
-		log.Fatalf("Failed to get logs: %v", err)
+		log.Fatalf("Failed to parse contract ABI: %v", err)
 	}
 
-	contractAbi, err := abi.JSON(strings.NewReader(contracts.ContractsMetaData.ABI))
-	if err != nil {
-		log.Fatalf("Failed to analyze the contractAbi: %v", err)
-	}
+	for {
+		logs, err := client.FilterLogs(context.Background(), query)
+		if err != nil {
+			log.Fatalf("Failed to retrieve logs: %v", err)
+		}
 
-	logTransferSig := []byte("Transfer(address,address,uint256)")
-	LogApprovalSig := []byte("Approval(address,address,uint256)")
-	logTransferSigHash := crypto.Keccak256Hash(logTransferSig)
-	logApprovalSigHash := crypto.Keccak256Hash(LogApprovalSig)
+		for _, vLog := range logs {
+			fmt.Printf("Log Block Number: %d\n", vLog.BlockNumber)
+			fmt.Printf("Log Index: %d\n", vLog.Index)
 
-	for _, vLog := range logs {
-		fmt.Printf("Log Block Number: %d\n", vLog.BlockNumber)
-		fmt.Printf("Log Index: %d\n", vLog.Index)
-
-		switch vLog.Topics[0].Hex() {
-		case logTransferSigHash.Hex():
-			fmt.Printf("Log Name: Transfer\n")
-
-			var transferEvent LogTransfer
-
-			err := contractAbi.UnpackIntoInterface(&transferEvent, "Transfer", vLog.Data)
-			if err != nil {
-				log.Fatalf("Failed to unpack into interface: %v", err)
+			var transferEvent struct {
+				From  common.Address
+				To    common.Address
+				Value *big.Int
 			}
 
-			transferEvent.From = common.HexToAddress(vLog.Topics[1].Hex())
-			transferEvent.To = common.HexToAddress(vLog.Topics[2].Hex())
+			// 解析未索引的参数
+			err := parsedABI.UnpackIntoInterface(&transferEvent, "Transfer", vLog.Data)
+			if err != nil {
+				log.Fatalf("Failed to unpack log data: %v", err)
+			}
 
 			fmt.Printf("From: %s\n", transferEvent.From.Hex())
 			fmt.Printf("To: %s\n", transferEvent.To.Hex())
-			fmt.Printf("Tokens: %s\n", transferEvent.Tokens.String())
+			fmt.Printf("Value: %s\n", transferEvent.Value.String())
 
-		case logApprovalSigHash.Hex():
-			fmt.Printf("Log Name: Approval\n")
-
-			var approvalEvent LogApproval
-
-			err := contractAbi.UnpackIntoInterface(&approvalEvent, "Approval", vLog.Data)
-			if err != nil {
-				log.Fatalf("Failed to unpack into interface: %v", err)
-			}
-
-			approvalEvent.TokenOwner = common.HexToAddress(vLog.Topics[1].Hex())
-			approvalEvent.Spender = common.HexToAddress(vLog.Topics[2].Hex())
-
-			fmt.Printf("Token Owner: %s\n", approvalEvent.TokenOwner.Hex())
-			fmt.Printf("Spender: %s\n", approvalEvent.Spender.Hex())
-			fmt.Printf("Tokens: %s\n", approvalEvent.Tokens.String())
+			// 访问索引的参数
+			transferEvent.From = common.HexToAddress(vLog.Topics[1].Hex())
+			transferEvent.To = common.HexToAddress(vLog.Topics[2].Hex())
+			fmt.Printf("Indexed From: %s\n", transferEvent.From.Hex())
+			fmt.Printf("Indexed To: %s\n", transferEvent.To.Hex())
 		}
 
-		fmt.Printf("\n\n")
+		// 每隔一段时间进行轮询
+		time.Sleep(5 * time.Second)
 	}
-
 }
