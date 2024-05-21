@@ -31,15 +31,15 @@ type LogApproval struct {
 }
 
 func main() {
-	client, err := ethclient.Dial("https://mainnet.infura.io/v3/c0fd902e8c32475f85909278c7352314")
+	client, err := ethclient.Dial("https://holesky.infura.io/v3/c0fd902e8c32475f85909278c7352314")
 	if err != nil {
 		log.Fatalf("Failed to connect to the Ethereum client: %v", err)
 	}
 
-	contractAddress := common.HexToAddress("0xe90c94bB82F30935f00B351Afe789F616fB3aD05")
+	contractAddress := common.HexToAddress("0x5774a5e7e7dce357DaC3d7d2dE35E5137136D48b")
 	query := ethereum.FilterQuery{
-		FromBlock: big.NewInt(6383820),
-		ToBlock:   big.NewInt(7383840),
+		FromBlock: big.NewInt(1584475),
+		ToBlock:   big.NewInt(1584539),
 		Addresses: []common.Address{
 			contractAddress,
 		},
@@ -50,7 +50,7 @@ func main() {
 		log.Fatalf("Failed to get logs: %v", err)
 	}
 
-	contractAbi, err := abi.JSON(strings.NewReader(contracts.MainMetaData.ABI))
+	contractAbi, err := abi.JSON(strings.NewReader(contracts.ContractsMetaData.ABI))
 	if err != nil {
 		log.Fatalf("Failed to analyze the contractAbi: %v", err)
 	}

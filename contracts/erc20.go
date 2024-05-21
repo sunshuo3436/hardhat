@@ -29,113 +29,113 @@ var (
 	_ = abi.ConvertType
 )
 
-// MainMetaData contains all meta data concerning the Main contract.
-var MainMetaData = &bind.MetaData{
+// ContractsMetaData contains all meta data concerning the Contracts contract.
+var ContractsMetaData = &bind.MetaData{
 	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"initialSupply\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"allowance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"needed\",\"type\":\"uint256\"}],\"name\":\"ERC20InsufficientAllowance\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"needed\",\"type\":\"uint256\"}],\"name\":\"ERC20InsufficientBalance\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"approver\",\"type\":\"address\"}],\"name\":\"ERC20InvalidApprover\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"ERC20InvalidReceiver\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"ERC20InvalidSender\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"ERC20InvalidSpender\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
-// MainABI is the input ABI used to generate the binding from.
-// Deprecated: Use MainMetaData.ABI instead.
-var MainABI = MainMetaData.ABI
+// ContractsABI is the input ABI used to generate the binding from.
+// Deprecated: Use ContractsMetaData.ABI instead.
+var ContractsABI = ContractsMetaData.ABI
 
-// Main is an auto generated Go binding around an Ethereum contract.
-type Main struct {
-	MainCaller     // Read-only binding to the contract
-	MainTransactor // Write-only binding to the contract
-	MainFilterer   // Log filterer for contract events
+// Contracts is an auto generated Go binding around an Ethereum contract.
+type Contracts struct {
+	ContractsCaller     // Read-only binding to the contract
+	ContractsTransactor // Write-only binding to the contract
+	ContractsFilterer   // Log filterer for contract events
 }
 
-// MainCaller is an auto generated read-only Go binding around an Ethereum contract.
-type MainCaller struct {
+// ContractsCaller is an auto generated read-only Go binding around an Ethereum contract.
+type ContractsCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// MainTransactor is an auto generated write-only Go binding around an Ethereum contract.
-type MainTransactor struct {
+// ContractsTransactor is an auto generated write-only Go binding around an Ethereum contract.
+type ContractsTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// MainFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
-type MainFilterer struct {
+// ContractsFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
+type ContractsFilterer struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// MainSession is an auto generated Go binding around an Ethereum contract,
+// ContractsSession is an auto generated Go binding around an Ethereum contract,
 // with pre-set call and transact options.
-type MainSession struct {
-	Contract     *Main             // Generic contract binding to set the session for
+type ContractsSession struct {
+	Contract     *Contracts        // Generic contract binding to set the session for
 	CallOpts     bind.CallOpts     // Call options to use throughout this session
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// MainCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// ContractsCallerSession is an auto generated read-only Go binding around an Ethereum contract,
 // with pre-set call options.
-type MainCallerSession struct {
-	Contract *MainCaller   // Generic contract caller binding to set the session for
-	CallOpts bind.CallOpts // Call options to use throughout this session
+type ContractsCallerSession struct {
+	Contract *ContractsCaller // Generic contract caller binding to set the session for
+	CallOpts bind.CallOpts    // Call options to use throughout this session
 }
 
-// MainTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// ContractsTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 // with pre-set transact options.
-type MainTransactorSession struct {
-	Contract     *MainTransactor   // Generic contract transactor binding to set the session for
-	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
+type ContractsTransactorSession struct {
+	Contract     *ContractsTransactor // Generic contract transactor binding to set the session for
+	TransactOpts bind.TransactOpts    // Transaction auth options to use throughout this session
 }
 
-// MainRaw is an auto generated low-level Go binding around an Ethereum contract.
-type MainRaw struct {
-	Contract *Main // Generic contract binding to access the raw methods on
+// ContractsRaw is an auto generated low-level Go binding around an Ethereum contract.
+type ContractsRaw struct {
+	Contract *Contracts // Generic contract binding to access the raw methods on
 }
 
-// MainCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
-type MainCallerRaw struct {
-	Contract *MainCaller // Generic read-only contract binding to access the raw methods on
+// ContractsCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+type ContractsCallerRaw struct {
+	Contract *ContractsCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// MainTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
-type MainTransactorRaw struct {
-	Contract *MainTransactor // Generic write-only contract binding to access the raw methods on
+// ContractsTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+type ContractsTransactorRaw struct {
+	Contract *ContractsTransactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewMain creates a new instance of Main, bound to a specific deployed contract.
-func NewMain(address common.Address, backend bind.ContractBackend) (*Main, error) {
-	contract, err := bindMain(address, backend, backend, backend)
+// NewContracts creates a new instance of Contracts, bound to a specific deployed contract.
+func NewContracts(address common.Address, backend bind.ContractBackend) (*Contracts, error) {
+	contract, err := bindContracts(address, backend, backend, backend)
 	if err != nil {
 		return nil, err
 	}
-	return &Main{MainCaller: MainCaller{contract: contract}, MainTransactor: MainTransactor{contract: contract}, MainFilterer: MainFilterer{contract: contract}}, nil
+	return &Contracts{ContractsCaller: ContractsCaller{contract: contract}, ContractsTransactor: ContractsTransactor{contract: contract}, ContractsFilterer: ContractsFilterer{contract: contract}}, nil
 }
 
-// NewMainCaller creates a new read-only instance of Main, bound to a specific deployed contract.
-func NewMainCaller(address common.Address, caller bind.ContractCaller) (*MainCaller, error) {
-	contract, err := bindMain(address, caller, nil, nil)
+// NewContractsCaller creates a new read-only instance of Contracts, bound to a specific deployed contract.
+func NewContractsCaller(address common.Address, caller bind.ContractCaller) (*ContractsCaller, error) {
+	contract, err := bindContracts(address, caller, nil, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &MainCaller{contract: contract}, nil
+	return &ContractsCaller{contract: contract}, nil
 }
 
-// NewMainTransactor creates a new write-only instance of Main, bound to a specific deployed contract.
-func NewMainTransactor(address common.Address, transactor bind.ContractTransactor) (*MainTransactor, error) {
-	contract, err := bindMain(address, nil, transactor, nil)
+// NewContractsTransactor creates a new write-only instance of Contracts, bound to a specific deployed contract.
+func NewContractsTransactor(address common.Address, transactor bind.ContractTransactor) (*ContractsTransactor, error) {
+	contract, err := bindContracts(address, nil, transactor, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &MainTransactor{contract: contract}, nil
+	return &ContractsTransactor{contract: contract}, nil
 }
 
-// NewMainFilterer creates a new log filterer instance of Main, bound to a specific deployed contract.
-func NewMainFilterer(address common.Address, filterer bind.ContractFilterer) (*MainFilterer, error) {
-	contract, err := bindMain(address, nil, nil, filterer)
+// NewContractsFilterer creates a new log filterer instance of Contracts, bound to a specific deployed contract.
+func NewContractsFilterer(address common.Address, filterer bind.ContractFilterer) (*ContractsFilterer, error) {
+	contract, err := bindContracts(address, nil, nil, filterer)
 	if err != nil {
 		return nil, err
 	}
-	return &MainFilterer{contract: contract}, nil
+	return &ContractsFilterer{contract: contract}, nil
 }
 
-// bindMain binds a generic wrapper to an already deployed contract.
-func bindMain(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := MainMetaData.GetAbi()
+// bindContracts binds a generic wrapper to an already deployed contract.
+func bindContracts(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := ContractsMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
@@ -146,46 +146,46 @@ func bindMain(address common.Address, caller bind.ContractCaller, transactor bin
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Main *MainRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _Main.Contract.MainCaller.contract.Call(opts, result, method, params...)
+func (_Contracts *ContractsRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _Contracts.Contract.ContractsCaller.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_Main *MainRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Main.Contract.MainTransactor.contract.Transfer(opts)
+func (_Contracts *ContractsRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Contracts.Contract.ContractsTransactor.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_Main *MainRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _Main.Contract.MainTransactor.contract.Transact(opts, method, params...)
+func (_Contracts *ContractsRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Contracts.Contract.ContractsTransactor.contract.Transact(opts, method, params...)
 }
 
 // Call invokes the (constant) contract method with params as input values and
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Main *MainCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _Main.Contract.contract.Call(opts, result, method, params...)
+func (_Contracts *ContractsCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _Contracts.Contract.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_Main *MainTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Main.Contract.contract.Transfer(opts)
+func (_Contracts *ContractsTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Contracts.Contract.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_Main *MainTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _Main.Contract.contract.Transact(opts, method, params...)
+func (_Contracts *ContractsTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Contracts.Contract.contract.Transact(opts, method, params...)
 }
 
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 //
 // Solidity: function allowance(address owner, address spender) view returns(uint256)
-func (_Main *MainCaller) Allowance(opts *bind.CallOpts, owner common.Address, spender common.Address) (*big.Int, error) {
+func (_Contracts *ContractsCaller) Allowance(opts *bind.CallOpts, owner common.Address, spender common.Address) (*big.Int, error) {
 	var out []interface{}
-	err := _Main.contract.Call(opts, &out, "allowance", owner, spender)
+	err := _Contracts.contract.Call(opts, &out, "allowance", owner, spender)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -200,23 +200,23 @@ func (_Main *MainCaller) Allowance(opts *bind.CallOpts, owner common.Address, sp
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 //
 // Solidity: function allowance(address owner, address spender) view returns(uint256)
-func (_Main *MainSession) Allowance(owner common.Address, spender common.Address) (*big.Int, error) {
-	return _Main.Contract.Allowance(&_Main.CallOpts, owner, spender)
+func (_Contracts *ContractsSession) Allowance(owner common.Address, spender common.Address) (*big.Int, error) {
+	return _Contracts.Contract.Allowance(&_Contracts.CallOpts, owner, spender)
 }
 
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 //
 // Solidity: function allowance(address owner, address spender) view returns(uint256)
-func (_Main *MainCallerSession) Allowance(owner common.Address, spender common.Address) (*big.Int, error) {
-	return _Main.Contract.Allowance(&_Main.CallOpts, owner, spender)
+func (_Contracts *ContractsCallerSession) Allowance(owner common.Address, spender common.Address) (*big.Int, error) {
+	return _Contracts.Contract.Allowance(&_Contracts.CallOpts, owner, spender)
 }
 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
 // Solidity: function balanceOf(address account) view returns(uint256)
-func (_Main *MainCaller) BalanceOf(opts *bind.CallOpts, account common.Address) (*big.Int, error) {
+func (_Contracts *ContractsCaller) BalanceOf(opts *bind.CallOpts, account common.Address) (*big.Int, error) {
 	var out []interface{}
-	err := _Main.contract.Call(opts, &out, "balanceOf", account)
+	err := _Contracts.contract.Call(opts, &out, "balanceOf", account)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -231,23 +231,23 @@ func (_Main *MainCaller) BalanceOf(opts *bind.CallOpts, account common.Address) 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
 // Solidity: function balanceOf(address account) view returns(uint256)
-func (_Main *MainSession) BalanceOf(account common.Address) (*big.Int, error) {
-	return _Main.Contract.BalanceOf(&_Main.CallOpts, account)
+func (_Contracts *ContractsSession) BalanceOf(account common.Address) (*big.Int, error) {
+	return _Contracts.Contract.BalanceOf(&_Contracts.CallOpts, account)
 }
 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
 // Solidity: function balanceOf(address account) view returns(uint256)
-func (_Main *MainCallerSession) BalanceOf(account common.Address) (*big.Int, error) {
-	return _Main.Contract.BalanceOf(&_Main.CallOpts, account)
+func (_Contracts *ContractsCallerSession) BalanceOf(account common.Address) (*big.Int, error) {
+	return _Contracts.Contract.BalanceOf(&_Contracts.CallOpts, account)
 }
 
 // Decimals is a free data retrieval call binding the contract method 0x313ce567.
 //
 // Solidity: function decimals() view returns(uint8)
-func (_Main *MainCaller) Decimals(opts *bind.CallOpts) (uint8, error) {
+func (_Contracts *ContractsCaller) Decimals(opts *bind.CallOpts) (uint8, error) {
 	var out []interface{}
-	err := _Main.contract.Call(opts, &out, "decimals")
+	err := _Contracts.contract.Call(opts, &out, "decimals")
 
 	if err != nil {
 		return *new(uint8), err
@@ -262,23 +262,23 @@ func (_Main *MainCaller) Decimals(opts *bind.CallOpts) (uint8, error) {
 // Decimals is a free data retrieval call binding the contract method 0x313ce567.
 //
 // Solidity: function decimals() view returns(uint8)
-func (_Main *MainSession) Decimals() (uint8, error) {
-	return _Main.Contract.Decimals(&_Main.CallOpts)
+func (_Contracts *ContractsSession) Decimals() (uint8, error) {
+	return _Contracts.Contract.Decimals(&_Contracts.CallOpts)
 }
 
 // Decimals is a free data retrieval call binding the contract method 0x313ce567.
 //
 // Solidity: function decimals() view returns(uint8)
-func (_Main *MainCallerSession) Decimals() (uint8, error) {
-	return _Main.Contract.Decimals(&_Main.CallOpts)
+func (_Contracts *ContractsCallerSession) Decimals() (uint8, error) {
+	return _Contracts.Contract.Decimals(&_Contracts.CallOpts)
 }
 
 // Name is a free data retrieval call binding the contract method 0x06fdde03.
 //
 // Solidity: function name() view returns(string)
-func (_Main *MainCaller) Name(opts *bind.CallOpts) (string, error) {
+func (_Contracts *ContractsCaller) Name(opts *bind.CallOpts) (string, error) {
 	var out []interface{}
-	err := _Main.contract.Call(opts, &out, "name")
+	err := _Contracts.contract.Call(opts, &out, "name")
 
 	if err != nil {
 		return *new(string), err
@@ -293,23 +293,23 @@ func (_Main *MainCaller) Name(opts *bind.CallOpts) (string, error) {
 // Name is a free data retrieval call binding the contract method 0x06fdde03.
 //
 // Solidity: function name() view returns(string)
-func (_Main *MainSession) Name() (string, error) {
-	return _Main.Contract.Name(&_Main.CallOpts)
+func (_Contracts *ContractsSession) Name() (string, error) {
+	return _Contracts.Contract.Name(&_Contracts.CallOpts)
 }
 
 // Name is a free data retrieval call binding the contract method 0x06fdde03.
 //
 // Solidity: function name() view returns(string)
-func (_Main *MainCallerSession) Name() (string, error) {
-	return _Main.Contract.Name(&_Main.CallOpts)
+func (_Contracts *ContractsCallerSession) Name() (string, error) {
+	return _Contracts.Contract.Name(&_Contracts.CallOpts)
 }
 
 // Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() view returns(string)
-func (_Main *MainCaller) Symbol(opts *bind.CallOpts) (string, error) {
+func (_Contracts *ContractsCaller) Symbol(opts *bind.CallOpts) (string, error) {
 	var out []interface{}
-	err := _Main.contract.Call(opts, &out, "symbol")
+	err := _Contracts.contract.Call(opts, &out, "symbol")
 
 	if err != nil {
 		return *new(string), err
@@ -324,23 +324,23 @@ func (_Main *MainCaller) Symbol(opts *bind.CallOpts) (string, error) {
 // Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() view returns(string)
-func (_Main *MainSession) Symbol() (string, error) {
-	return _Main.Contract.Symbol(&_Main.CallOpts)
+func (_Contracts *ContractsSession) Symbol() (string, error) {
+	return _Contracts.Contract.Symbol(&_Contracts.CallOpts)
 }
 
 // Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() view returns(string)
-func (_Main *MainCallerSession) Symbol() (string, error) {
-	return _Main.Contract.Symbol(&_Main.CallOpts)
+func (_Contracts *ContractsCallerSession) Symbol() (string, error) {
+	return _Contracts.Contract.Symbol(&_Contracts.CallOpts)
 }
 
 // TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
 //
 // Solidity: function totalSupply() view returns(uint256)
-func (_Main *MainCaller) TotalSupply(opts *bind.CallOpts) (*big.Int, error) {
+func (_Contracts *ContractsCaller) TotalSupply(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _Main.contract.Call(opts, &out, "totalSupply")
+	err := _Contracts.contract.Call(opts, &out, "totalSupply")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -355,83 +355,83 @@ func (_Main *MainCaller) TotalSupply(opts *bind.CallOpts) (*big.Int, error) {
 // TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
 //
 // Solidity: function totalSupply() view returns(uint256)
-func (_Main *MainSession) TotalSupply() (*big.Int, error) {
-	return _Main.Contract.TotalSupply(&_Main.CallOpts)
+func (_Contracts *ContractsSession) TotalSupply() (*big.Int, error) {
+	return _Contracts.Contract.TotalSupply(&_Contracts.CallOpts)
 }
 
 // TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
 //
 // Solidity: function totalSupply() view returns(uint256)
-func (_Main *MainCallerSession) TotalSupply() (*big.Int, error) {
-	return _Main.Contract.TotalSupply(&_Main.CallOpts)
+func (_Contracts *ContractsCallerSession) TotalSupply() (*big.Int, error) {
+	return _Contracts.Contract.TotalSupply(&_Contracts.CallOpts)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address spender, uint256 value) returns(bool)
-func (_Main *MainTransactor) Approve(opts *bind.TransactOpts, spender common.Address, value *big.Int) (*types.Transaction, error) {
-	return _Main.contract.Transact(opts, "approve", spender, value)
+func (_Contracts *ContractsTransactor) Approve(opts *bind.TransactOpts, spender common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Contracts.contract.Transact(opts, "approve", spender, value)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address spender, uint256 value) returns(bool)
-func (_Main *MainSession) Approve(spender common.Address, value *big.Int) (*types.Transaction, error) {
-	return _Main.Contract.Approve(&_Main.TransactOpts, spender, value)
+func (_Contracts *ContractsSession) Approve(spender common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Contracts.Contract.Approve(&_Contracts.TransactOpts, spender, value)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address spender, uint256 value) returns(bool)
-func (_Main *MainTransactorSession) Approve(spender common.Address, value *big.Int) (*types.Transaction, error) {
-	return _Main.Contract.Approve(&_Main.TransactOpts, spender, value)
+func (_Contracts *ContractsTransactorSession) Approve(spender common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Contracts.Contract.Approve(&_Contracts.TransactOpts, spender, value)
 }
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
 // Solidity: function transfer(address to, uint256 value) returns(bool)
-func (_Main *MainTransactor) Transfer(opts *bind.TransactOpts, to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _Main.contract.Transact(opts, "transfer", to, value)
+func (_Contracts *ContractsTransactor) Transfer(opts *bind.TransactOpts, to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Contracts.contract.Transact(opts, "transfer", to, value)
 }
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
 // Solidity: function transfer(address to, uint256 value) returns(bool)
-func (_Main *MainSession) Transfer(to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _Main.Contract.Transfer(&_Main.TransactOpts, to, value)
+func (_Contracts *ContractsSession) Transfer(to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Contracts.Contract.Transfer(&_Contracts.TransactOpts, to, value)
 }
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
 // Solidity: function transfer(address to, uint256 value) returns(bool)
-func (_Main *MainTransactorSession) Transfer(to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _Main.Contract.Transfer(&_Main.TransactOpts, to, value)
+func (_Contracts *ContractsTransactorSession) Transfer(to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Contracts.Contract.Transfer(&_Contracts.TransactOpts, to, value)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address from, address to, uint256 value) returns(bool)
-func (_Main *MainTransactor) TransferFrom(opts *bind.TransactOpts, from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _Main.contract.Transact(opts, "transferFrom", from, to, value)
+func (_Contracts *ContractsTransactor) TransferFrom(opts *bind.TransactOpts, from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Contracts.contract.Transact(opts, "transferFrom", from, to, value)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address from, address to, uint256 value) returns(bool)
-func (_Main *MainSession) TransferFrom(from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _Main.Contract.TransferFrom(&_Main.TransactOpts, from, to, value)
+func (_Contracts *ContractsSession) TransferFrom(from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Contracts.Contract.TransferFrom(&_Contracts.TransactOpts, from, to, value)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address from, address to, uint256 value) returns(bool)
-func (_Main *MainTransactorSession) TransferFrom(from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _Main.Contract.TransferFrom(&_Main.TransactOpts, from, to, value)
+func (_Contracts *ContractsTransactorSession) TransferFrom(from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Contracts.Contract.TransferFrom(&_Contracts.TransactOpts, from, to, value)
 }
 
-// MainApprovalIterator is returned from FilterApproval and is used to iterate over the raw logs and unpacked data for Approval events raised by the Main contract.
-type MainApprovalIterator struct {
-	Event *MainApproval // Event containing the contract specifics and raw log
+// ContractsApprovalIterator is returned from FilterApproval and is used to iterate over the raw logs and unpacked data for Approval events raised by the Contracts contract.
+type ContractsApprovalIterator struct {
+	Event *ContractsApproval // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -445,7 +445,7 @@ type MainApprovalIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *MainApprovalIterator) Next() bool {
+func (it *ContractsApprovalIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -454,7 +454,7 @@ func (it *MainApprovalIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(MainApproval)
+			it.Event = new(ContractsApproval)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -469,7 +469,7 @@ func (it *MainApprovalIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(MainApproval)
+		it.Event = new(ContractsApproval)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -485,19 +485,19 @@ func (it *MainApprovalIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *MainApprovalIterator) Error() error {
+func (it *ContractsApprovalIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *MainApprovalIterator) Close() error {
+func (it *ContractsApprovalIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// MainApproval represents a Approval event raised by the Main contract.
-type MainApproval struct {
+// ContractsApproval represents a Approval event raised by the Contracts contract.
+type ContractsApproval struct {
 	Owner   common.Address
 	Spender common.Address
 	Value   *big.Int
@@ -507,7 +507,7 @@ type MainApproval struct {
 // FilterApproval is a free log retrieval operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 //
 // Solidity: event Approval(address indexed owner, address indexed spender, uint256 value)
-func (_Main *MainFilterer) FilterApproval(opts *bind.FilterOpts, owner []common.Address, spender []common.Address) (*MainApprovalIterator, error) {
+func (_Contracts *ContractsFilterer) FilterApproval(opts *bind.FilterOpts, owner []common.Address, spender []common.Address) (*ContractsApprovalIterator, error) {
 
 	var ownerRule []interface{}
 	for _, ownerItem := range owner {
@@ -518,17 +518,17 @@ func (_Main *MainFilterer) FilterApproval(opts *bind.FilterOpts, owner []common.
 		spenderRule = append(spenderRule, spenderItem)
 	}
 
-	logs, sub, err := _Main.contract.FilterLogs(opts, "Approval", ownerRule, spenderRule)
+	logs, sub, err := _Contracts.contract.FilterLogs(opts, "Approval", ownerRule, spenderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &MainApprovalIterator{contract: _Main.contract, event: "Approval", logs: logs, sub: sub}, nil
+	return &ContractsApprovalIterator{contract: _Contracts.contract, event: "Approval", logs: logs, sub: sub}, nil
 }
 
 // WatchApproval is a free log subscription operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 //
 // Solidity: event Approval(address indexed owner, address indexed spender, uint256 value)
-func (_Main *MainFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *MainApproval, owner []common.Address, spender []common.Address) (event.Subscription, error) {
+func (_Contracts *ContractsFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *ContractsApproval, owner []common.Address, spender []common.Address) (event.Subscription, error) {
 
 	var ownerRule []interface{}
 	for _, ownerItem := range owner {
@@ -539,7 +539,7 @@ func (_Main *MainFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *Main
 		spenderRule = append(spenderRule, spenderItem)
 	}
 
-	logs, sub, err := _Main.contract.WatchLogs(opts, "Approval", ownerRule, spenderRule)
+	logs, sub, err := _Contracts.contract.WatchLogs(opts, "Approval", ownerRule, spenderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -549,8 +549,8 @@ func (_Main *MainFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *Main
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(MainApproval)
-				if err := _Main.contract.UnpackLog(event, "Approval", log); err != nil {
+				event := new(ContractsApproval)
+				if err := _Contracts.contract.UnpackLog(event, "Approval", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -574,18 +574,18 @@ func (_Main *MainFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *Main
 // ParseApproval is a log parse operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 //
 // Solidity: event Approval(address indexed owner, address indexed spender, uint256 value)
-func (_Main *MainFilterer) ParseApproval(log types.Log) (*MainApproval, error) {
-	event := new(MainApproval)
-	if err := _Main.contract.UnpackLog(event, "Approval", log); err != nil {
+func (_Contracts *ContractsFilterer) ParseApproval(log types.Log) (*ContractsApproval, error) {
+	event := new(ContractsApproval)
+	if err := _Contracts.contract.UnpackLog(event, "Approval", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// MainTransferIterator is returned from FilterTransfer and is used to iterate over the raw logs and unpacked data for Transfer events raised by the Main contract.
-type MainTransferIterator struct {
-	Event *MainTransfer // Event containing the contract specifics and raw log
+// ContractsTransferIterator is returned from FilterTransfer and is used to iterate over the raw logs and unpacked data for Transfer events raised by the Contracts contract.
+type ContractsTransferIterator struct {
+	Event *ContractsTransfer // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -599,7 +599,7 @@ type MainTransferIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *MainTransferIterator) Next() bool {
+func (it *ContractsTransferIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -608,7 +608,7 @@ func (it *MainTransferIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(MainTransfer)
+			it.Event = new(ContractsTransfer)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -623,7 +623,7 @@ func (it *MainTransferIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(MainTransfer)
+		it.Event = new(ContractsTransfer)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -639,19 +639,19 @@ func (it *MainTransferIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *MainTransferIterator) Error() error {
+func (it *ContractsTransferIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *MainTransferIterator) Close() error {
+func (it *ContractsTransferIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// MainTransfer represents a Transfer event raised by the Main contract.
-type MainTransfer struct {
+// ContractsTransfer represents a Transfer event raised by the Contracts contract.
+type ContractsTransfer struct {
 	From  common.Address
 	To    common.Address
 	Value *big.Int
@@ -661,7 +661,7 @@ type MainTransfer struct {
 // FilterTransfer is a free log retrieval operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
 // Solidity: event Transfer(address indexed from, address indexed to, uint256 value)
-func (_Main *MainFilterer) FilterTransfer(opts *bind.FilterOpts, from []common.Address, to []common.Address) (*MainTransferIterator, error) {
+func (_Contracts *ContractsFilterer) FilterTransfer(opts *bind.FilterOpts, from []common.Address, to []common.Address) (*ContractsTransferIterator, error) {
 
 	var fromRule []interface{}
 	for _, fromItem := range from {
@@ -672,17 +672,17 @@ func (_Main *MainFilterer) FilterTransfer(opts *bind.FilterOpts, from []common.A
 		toRule = append(toRule, toItem)
 	}
 
-	logs, sub, err := _Main.contract.FilterLogs(opts, "Transfer", fromRule, toRule)
+	logs, sub, err := _Contracts.contract.FilterLogs(opts, "Transfer", fromRule, toRule)
 	if err != nil {
 		return nil, err
 	}
-	return &MainTransferIterator{contract: _Main.contract, event: "Transfer", logs: logs, sub: sub}, nil
+	return &ContractsTransferIterator{contract: _Contracts.contract, event: "Transfer", logs: logs, sub: sub}, nil
 }
 
 // WatchTransfer is a free log subscription operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
 // Solidity: event Transfer(address indexed from, address indexed to, uint256 value)
-func (_Main *MainFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *MainTransfer, from []common.Address, to []common.Address) (event.Subscription, error) {
+func (_Contracts *ContractsFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *ContractsTransfer, from []common.Address, to []common.Address) (event.Subscription, error) {
 
 	var fromRule []interface{}
 	for _, fromItem := range from {
@@ -693,7 +693,7 @@ func (_Main *MainFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *Main
 		toRule = append(toRule, toItem)
 	}
 
-	logs, sub, err := _Main.contract.WatchLogs(opts, "Transfer", fromRule, toRule)
+	logs, sub, err := _Contracts.contract.WatchLogs(opts, "Transfer", fromRule, toRule)
 	if err != nil {
 		return nil, err
 	}
@@ -703,8 +703,8 @@ func (_Main *MainFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *Main
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(MainTransfer)
-				if err := _Main.contract.UnpackLog(event, "Transfer", log); err != nil {
+				event := new(ContractsTransfer)
+				if err := _Contracts.contract.UnpackLog(event, "Transfer", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -728,9 +728,9 @@ func (_Main *MainFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *Main
 // ParseTransfer is a log parse operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
 // Solidity: event Transfer(address indexed from, address indexed to, uint256 value)
-func (_Main *MainFilterer) ParseTransfer(log types.Log) (*MainTransfer, error) {
-	event := new(MainTransfer)
-	if err := _Main.contract.UnpackLog(event, "Transfer", log); err != nil {
+func (_Contracts *ContractsFilterer) ParseTransfer(log types.Log) (*ContractsTransfer, error) {
+	event := new(ContractsTransfer)
+	if err := _Contracts.contract.UnpackLog(event, "Transfer", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
