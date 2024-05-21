@@ -1,59 +1,52 @@
-// Solidity files have to start with this pragma.
-// It will be used by the Solidity compiler to validate its version.
-pragma solidity ^0.8.9;
+//A simple token function,
+//including token issuance,
+//transfers and balance inquiries
+pragma solidity ^0.8.24;
 
+import "hardhat/console.sol";
 
-// This is the main building block for smart contracts.
 contract Token {
-    // Some string type variables to identify the token.
-    // The `public` modifier makes a variable readable from outside the contract.
-    string public name = "My Hardhat Token";
-    string public symbol = "MBT";
 
-    // 固定发行量，保存在一个无符号整型里
+    string public name = "My Hardhat Token";
+    string public symbol = "MBT";//Names and symbols of tokens
+
+    // fixed issue, stored in an unsigned integer
     uint256 public totalSupply = 1000000;
 
     // An address type variable is used to store ethereum accounts.
     address public owner;
 
-    // A mapping is a key/value map. Here we store each account balance.
+    // A mapping is a key/value map. Store each account balance.
     mapping(address => uint256) balances;
 
-    /**
-     * 合约构造函数
-     *
-     * The `constructor` is executed only once when the contract is created.
-     */
+    // Event to track token transfers
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    //Only once when the contract is created.
     constructor() {
-        // The totalSupply is assigned to transaction sender, which is the account
-        // that is deploying the contract.
+    //TotalSupply is assign to sender(which account deploy the smart contract
         balances[msg.sender] = totalSupply;
         owner = msg.sender;
     }
-
-    /**
-     * 代币转账.
-     *
-     * The `external` modifier makes a function *only* callable from outside
-     * the contract.
-     */
+    //External:only can call from outside
     function transfer(address to, uint256 amount) external {
         // Check if the transaction sender has enough tokens.
-        // If `require`'s first argument evaluates to `false` then the
-        // transaction will revert.
         require(balances[msg.sender] >= amount, "Not enough tokens");
+        console.log(
+            "Transferring from %s to %s %s tokens",
+            msg.sender,
+            to,
+            amount
+        );
 
         // Transfer the amount.
         balances[msg.sender] -= amount;
         balances[to] += amount;
+
+        // Emit Transfer event
+        emit Transfer(msg.sender, to, amount);
     }
 
-    /**
-     * 返回账号的代币余额，只读函数。
-     *
-     * The `view` modifier indicates that it doesn't modify the contract's
-     * state, which allows us to call it without executing a transaction.
-     */
     function balanceOf(address account) external view returns (uint256) {
         return balances[account];
     }
