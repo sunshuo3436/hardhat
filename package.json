@@ -6,11 +6,13 @@
   "license": "MIT",
   "scripts": {
     "build": "forge build",
-    "test": "forge test"
+    "forge-test": "forge test",
+    "jstest": "npx hardhat test"
   },
-  "author": "",
+  "author": "<sunshuo3436@gmail.com>",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.3"
-  }
+    "hardhat": "^2.22.4",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0"
+  },
+  "repository": "https://github.com/sunshuo3436/hardhat.git"
 }

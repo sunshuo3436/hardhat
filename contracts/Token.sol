@@ -1,6 +1,4 @@
-//A simple token function,
-//including token issuance,
-//transfers and balance inquiries
+//A smart contract including token issuance,transfers and balance inquiries
 pragma solidity ^0.8.24;
 
 import "hardhat/console.sol";
@@ -11,7 +9,7 @@ contract Token {
     string public symbol = "MBT";//Names and symbols of tokens
 
     // fixed issue, stored in an unsigned integer
-    uint256 public totalSupply = 1000000;
+    uint256 public totalSupply = 1000000000000000000;
 
     // An address type variable is used to store ethereum accounts.
     address public owner;
@@ -28,6 +26,8 @@ contract Token {
         balances[msg.sender] = totalSupply;
         owner = msg.sender;
     }
+
+
     //External:only can call from outside
     function transfer(address to, uint256 amount) external {
         // Check if the transaction sender has enough tokens.
@@ -50,4 +50,5 @@ contract Token {
     function balanceOf(address account) external view returns (uint256) {
         return balances[account];
     }
+
 }
